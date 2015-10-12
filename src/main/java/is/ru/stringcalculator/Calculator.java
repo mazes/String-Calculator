@@ -6,8 +6,9 @@ public class Calculator {
 		if(text.isEmpty()){
 			return 0;
 		}
-		else
+		else {
 			return 1;
+		}
 
 	}
 }
