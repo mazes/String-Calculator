@@ -7,8 +7,9 @@ public class Calculator {
 			return 0;
 		}
 		else if (text.contains(",")){
-			String numbers[] = text.split(",");
-			return toInt(numbers[0]) + toInt(numbers[1]);
+			String result[] = text.split(",");
+			int resultSum = sum(result);
+			return resultSum;
 		}
 		else {
 			return 1;
@@ -18,5 +19,13 @@ public class Calculator {
 
 	private static int toInt(String number) {
 		return Integer.parseInt(number);
+	}
+
+	private static int sum(String numbers[]) {
+		int result = 0;
+		for (String number: numbers) {
+			result += toInt(number);
+		}
+		return result;
 	}
 }
