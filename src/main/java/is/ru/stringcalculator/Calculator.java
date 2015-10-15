@@ -6,10 +6,9 @@ public class Calculator {
 		if(text.isEmpty()){
 			return 0;
 		}
-		else if (text.contains(",")){
-			String result[] = text.split(",");
-			int resultSum = sum(result);
-			return resultSum;
+		else if (text.contains(",") || text.contains("\\n")){
+			String result[] = text.split("[,|\\n]");
+			return sum(result);
 		}
 		else {
 			return 1;
