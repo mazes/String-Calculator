@@ -1,5 +1,8 @@
 package is.ru.stringcalculator;
 import java.lang.StringBuilder;
+import java.lang.Exception;
+import java.lang.Object;
+import java.util.*;
 
 public class Calculator {
 
@@ -17,6 +20,26 @@ public class Calculator {
 				String customD = customDelimitor.toString();
 				String result[] = text.split(customD);
 				return sumC(result);
+			}
+
+			else if (text.contains("-")) {
+				int i = 0; int j = 0;
+				String textArr[] = text.split(",|\\n");
+				ArrayList<String> list = new ArrayList<String>(Arrays.asList(textArr));
+				StringBuilder negatives = new StringBuilder("Negative numbers not allowed: ");
+				for ( String number: textArr) {
+					if (toInt(number) < 0) {
+						negatives.append(number);
+						negatives.append(",");
+						list.remove(number);
+					}
+					i++;
+				}
+				String negativeNumbers = negatives.toString();
+				negativeNumbers = negativeNumbers.substring(0, negativeNumbers.length() - 1);
+				String[] resultArr = new String[list.size()];
+				resultArr = list.toArray(resultArr);
+				return sum(resultArr);
 			}
 
 			else {
@@ -50,5 +73,9 @@ public class Calculator {
 			result += toInt(numbers[i]);
 		}
 		return result;
+	}
+
+	public static void ex(String negativeNrs) throws Exception {
+				throw new Exception(negativeNrs);
 	}
 }
