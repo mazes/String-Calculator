@@ -33,4 +33,10 @@ public class CalculatorTest {
 	public void testNewLineCharacter() {
 		assertEquals(6, Calculator.add("1\n2,3"));
 	}
+
+	@Test
+	public void testMoreDelimitors() {
+		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
+
 }
