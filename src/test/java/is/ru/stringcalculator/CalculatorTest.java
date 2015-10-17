@@ -44,4 +44,9 @@ public class CalculatorTest {
 		assertEquals(2, Calculator.add("-1,2,-4"));
 	}
 
+	@Test
+	public void testBigNumbers() {
+		assertEquals(2, Calculator.add("1001,2"));
+	}
+
 }

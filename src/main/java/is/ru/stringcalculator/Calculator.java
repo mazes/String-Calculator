@@ -42,6 +42,7 @@ public class Calculator {
 				return sum(resultArr);
 			}
 
+
 			else {
 				String result[] = text.split("[,|\\n]");
 				return sum(result);
@@ -62,7 +63,9 @@ public class Calculator {
 	private static int sum(String numbers[]) {
 		int result = 0;
 		for (String number: numbers) {
+			if(toInt(number) < 1000){
 			result += toInt(number);
+			}
 		}
 		return result;
 	}
@@ -70,7 +73,9 @@ public class Calculator {
 	private static int sumC(String numbers[]) {
 		int result = 0;
 		for (int i = 2; i < numbers.length; i++){
+			if (toInt(numbers[i]) < 1000){
 			result += toInt(numbers[i]);
+			}
 		}
 		return result;
 	}
